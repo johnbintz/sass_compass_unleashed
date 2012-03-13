@@ -1,0 +1,45 @@
+!SLIDE
+# Math
+## Is your best friend
+
+!SLIDE long
+# *Almost* every thing a designer does can be converted into some sort of mathmatical layout... *ALMOST*
+
+!SLIDE
+# Layout
+``` scss
+$wrapper-width      : 960px;
+$sidebar-width      : 50px;
+$main-content-width : $wrapper - $sidebar;
+
+.wrapper {
+  width : $wrapper-width;
+}
+
+.sidebar {
+  width : $sidebar-width;
+}
+
+.content {
+  width : $main-content-width;
+}
+
+```
+
+!SLIDE
+# Ranges
+``` scss
+@for $i from 1 through 4 {
+  h#{$i} {
+    @include header($i);
+  }
+}
+```
+!SLIDE
+# Image demensions
+``` scss
+.play {
+  left: ($width / 2) - (global-sprite-width(play_movie) / 2);
+  top: ($height / 2) - (global-sprite-height(play_movie) / 2);
+}
+```

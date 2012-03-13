@@ -1,27 +1,6 @@
 !SLIDE
 # Colors
 
-!SLIDE better
-## This is ok, but we can do better
-``` scss
-// dark gray
-$text-color                      : rgb(33,33,33) !default;
-// lightest gray
-$text-compliment-color           : rgb(188,188,188) !default;
-//h1, h2
-$title-color                     : rgb(63,63,63) !default;
-// blue
-$primary-accent-color            : rgb(33,89,167) !default;
-// blue on dark
-$primary-accent-compliment-color : rgb(138, 182, 225) !default;
-//orange - link color
-$secondary-accent-color          : rgb(199, 105, 0) !default;
-// light gray
-$ancillary-color                 : rgb(109,109,109) !default;
-// lighter gray
-$ancillary-compliment-color      : rgb(150,150,150) !default;
-```
-
 !SLIDE bad
 # This is bad
 
@@ -42,8 +21,26 @@ $lightest-gray : rgb(188,188,188) !default;
 
 ```
 
-!SLIDE
-# But it isn't always bad
+!SLIDE better
+## This is ok, but we can do better
+``` scss
+// dark gray
+$text-color                      : rgb(33,33,33) !default;
+// lightest gray
+$text-compliment-color           : rgb(188,188,188) !default;
+//h1, h2
+$title-color                     : rgb(63,63,63) !default;
+// blue
+$primary-accent-color            : rgb(33,89,167) !default;
+// blue on dark
+$primary-accent-compliment-color : rgb(138, 182, 225) !default;
+//orange - link color
+$secondary-accent-color          : rgb(199, 105, 0) !default;
+// light gray
+$ancillary-color                 : rgb(109,109,109) !default;
+// lighter gray
+$ancillary-compliment-color      : rgb(150,150,150) !default;
+```
 
 !SLIDE pallet
 # Pallets

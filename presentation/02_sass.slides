@@ -11,9 +11,9 @@
 * Variables `$foo`
 * Mixins `@mixin`
 * Functions
-* Selector Interitance `@extend, &`
+* Selector Inheritance `@extend, &`
 * Control Directives `@if, @for, @each, @while`
-* Its a language
+* Its a language!
 
 !SLIDE variables
 # Variables
@@ -44,6 +44,43 @@
 @mixin menu-level2-active {
   $args: get-stops($menu-active-colors, $menu-active-stops);
   @include background(linear-gradient($menu-active-direction, $args));
+}
+
+```
+
+!SLIDE inheritance
+# Inheritance
+``` scss
+
+a {
+
+  color : $link-color;
+
+  &:hover {
+    color : $link-hover-color;
+  }
+
+}
+
+```
+
+!SLIDE extend
+## Extend
+``` scss
+
+.foo {
+  font-size : 10px;
+}
+
+.bar {
+  @extend .foo;
+}
+
+```
+``` css
+
+.foo, .bar {
+  font-size : 10px;
 }
 
 ```

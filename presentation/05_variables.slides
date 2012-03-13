@@ -1,0 +1,64 @@
+!SLIDE variable-layout
+# Variables Definitions
+
+!SLIDE bad-variables
+``` scss
+// There are 100 lines before this
+.content_head {
+  @include clearfix;
+  
+  .hr { 
+    $height       : 2px;
+    padding-top   : (rhythm(1) / 2) - $height;
+    width         : 100%;
+    border-bottom : $height solid $secondary-accent-color;
+    margin-bottom : 10px;
+    display       : block;
+    @extend .float-right;
+  }
+
+  .release_identifiers {
+    @extend .float-right;
+    text-align  : right;
+    font-family : $ancillary-font;
+  }
+}
+```
+
+!SLIDE important
+
+#Always define your variables at the top of each file!
+
+!SLIDE big-list variable-why
+
+* Easy to find
+* Easy to update
+* No suprises
+
+!SLIDE
+
+``` scss
+/* Local Variaibles */
+$release-content-width       : 760px;
+$release-content-border-size : 6px;
+$release-content-top-margin  : 9px;
+$release-content-height      : rhythm(2);
+
+$section-side-width          : column-width(4);
+$section-side-height         : 24;
+$section-side-li-padding     : 10px; 
+
+$control-border-height       : 1px;
+$control-box-height          : 2;
+$control-top-box-leader      : 1;
+
+$group-image-height          : rhythm(6);
+
+.contents .show {
+  h1 {
+    @include header(3);
+    @include trailer;
+    color  : $primary-accent-color;
+  }
+  // ... goes on for 100+ lines
+```

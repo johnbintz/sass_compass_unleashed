@@ -30,6 +30,19 @@ body {
   @include show-logo('sass.gif');
 }
 
+.style-big-list {
+  li {
+    font-size : 60px;
+  }
+}
+
+.style-variable-why {
+  ul {
+    width  : 450px !important;
+    margin : 0 auto;
+  }
+}
+
 .na {
   color : #19177C;
 }
