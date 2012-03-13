@@ -1,0 +1,49 @@
+!SLIDE
+# Sass
+
+!SLIDE
+# What is Sass?
+## Its a preprocesor
+
+!SLIDE
+# What does it do?
+
+* Variables `$foo`
+* Mixins `@mixin`
+* Functions
+* Selector Interitance `@extend, &`
+* Control Directives `@if, @for, @each, @while`
+* Its a language
+
+!SLIDE variables
+# Variables
+
+``` scss
+
+  $foo : #fffff;
+  $bar : (1px * 2em) / 4px;
+
+```
+
+!SLIDE mixins
+
+# Functions and Mixins
+
+``` scss
+
+@function get-stops($colors, $stops) {
+  $out:();
+  @each $color in $colors {
+    $i: index($colors, $color);
+    $stop: 0% + nth($stops, $i);
+    $out: append($out, $color $stop, 'comma');
+  }
+  @return $out;
+}
+
+@mixin menu-level2-active {
+  $args: get-stops($menu-active-colors, $menu-active-stops);
+  @include background(linear-gradient($menu-active-direction, $args));
+}
+
+```

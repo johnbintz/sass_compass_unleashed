@@ -1,0 +1,121 @@
+@import 'attentive';
+@import 'compass';
+//@import 'syntax';
+
+$body-color      : rgb(33,33,33);
+$code-background : lighten(mix($body-color, white), 30%);
+
+body {
+  background-color: $body-color;
+}
+
+@mixin show-logo($logo) {
+  background-image  : image-url($logo);
+  background-repeat : no-repeat;
+  width             : image-width($logo);
+  height            : image-height($logo);
+}
+
+.compass {
+  position          : absolute;
+  bottom            : 0;
+  left              : 20px;
+  @include show-logo('dark-logo.png');
+}
+
+.sass {
+  position          : absolute;
+  bottom            : 10px;
+  right             : 20px;
+  @include show-logo('sass.gif');
+}
+
+.na {
+  color : #19177C;
+}
+
+.err {
+  color : #008000;
+  border : none;
+}
+
+.rounded {
+  @include border-radius(10px);
+}
+
+h1, h2, h3, li, p {
+  font-family : Nunito, sans-serif;
+  color       : white;
+}
+
+#slides {
+
+  @include transition-duration(0.5s);
+
+  .highlight {
+    @extend .rounded;
+    background-color : $code-background;
+    width            : 90%;
+    margin           : 0 auto;
+    margin-top       : 20px;
+  }
+
+  .slide {
+    opacity : 0.4;
+
+    &.active { opacity : 1.0 }
+  }
+
+
+  .style-better .highlight {
+    width : 800px;
+  }
+
+  .style-bad .highlight, .style-pallet .highlight {        
+    width : 700px;
+  }
+
+  .style-variables .highlight {
+    width : 500px;
+  }
+
+  .style-mixins .highlight {
+    width : 900px;
+  }
+
+  ul {
+    padding-top: 30px;
+    font-size  : 30px;
+    width      : 50%;
+    margin     : 0 auto;
+    text-align : left;
+    li {
+      padding-top : 10px;
+    }
+  }
+
+  code {
+    @extend .rounded;
+    background-color : $code-background;
+    font-size        : 90%;
+    font-weight      : bold;
+    padding          : 2px 10px;
+    color            : $body-color;
+  }
+
+  .style-long {
+    h1 {
+      font-size : 60px !important;
+    }
+  }
+
+  .style-important {
+    h1 { 
+      color : rgb(255, 0, 0); 
+      font-weight : normal;
+
+    }
+  }
+
+}
+

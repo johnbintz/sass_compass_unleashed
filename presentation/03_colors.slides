@@ -1,0 +1,77 @@
+!SLIDE
+# Colors
+
+!SLIDE better
+## This is ok, but we can do better
+``` scss
+// dark gray
+$text-color                      : rgb(33,33,33) !default;
+// lightest gray
+$text-compliment-color           : rgb(188,188,188) !default;
+//h1, h2
+$title-color                     : rgb(63,63,63) !default;
+// blue
+$primary-accent-color            : rgb(33,89,167) !default;
+// blue on dark
+$primary-accent-compliment-color : rgb(138, 182, 225) !default;
+//orange - link color
+$secondary-accent-color          : rgb(199, 105, 0) !default;
+// light gray
+$ancillary-color                 : rgb(109,109,109) !default;
+// lighter gray
+$ancillary-compliment-color      : rgb(150,150,150) !default;
+```
+
+!SLIDE bad
+# This is bad
+
+``` scss
+
+$orange        : rgb(138, 182, 225) !default;
+$blue          : rgb(33,89,167) !default;
+$lighter-blue  : rgb(138, 182, 225) !default;
+$gray          : rgb(63,63,63) !default;
+$dark-gray     : rgb(33,33,33) !default;
+$light-gray    : rgb(109,109,109) !default;
+$lighter-gray  : rgb(150,150,150) !default;
+$lightest-gray : rgb(188,188,188) !default;
+
+.foo {
+  color : $blue;
+}
+
+```
+
+!SLIDE
+# But it isn't always bad
+
+!SLIDE pallet
+# Pallets
+
+``` scss
+// _pallet.scss
+$orange        : rgb(138, 182, 225) !default;
+$blue          : rgb(33,89,167) !default;
+$lighter-blue  : rgb(138, 182, 225) !default;
+$gray          : rgb(63,63,63) !default;
+$light-gray    : rgb(109,109,109) !default;
+$lighter-gray  : rgb(150,150,150) !default;
+$lightest-gray : rgb(188,188,188) !default;
+
+// _colors.scss
+//text
+$text-color                      : $dark-gray;
+$text-compliment-color           : $lightest-gray;
+$title-color                     : $gray;
+$primary-accent-color            : $blue;
+$primary-accent-compliment-color : $lighter-blue;
+$secondary-accent-color          : $orange;
+$ancillary-color                 : $light-gray;
+$ancillary-compliment-color      : $lighter-gray;
+```
+
+!SLIDE important long
+<img src="/assets/rage-face.png">
+# Only use your pallet colors to define your more descriptive color variables!
+
+
