@@ -2,8 +2,17 @@
 @import 'compass';
 //@import 'syntax';
 
-$body-color      : rgb(33,33,33);
-$code-background : lighten(mix($body-color, white), 30%);
+$dark-gray       : rgb(33,33,33);
+$red             : rgb(255, 0, 0);
+$white           : white;
+$lighter-gray    : lighten(mix($dark-gray, $white), 30%);
+
+$body-color      : $dark-gray;
+$code-background : $lighter-gray;
+$important-color : $red;
+
+$compass-logo    : 'dark-logo.png';
+$sass-logo       : 'sass.gif';
 
 body {
   background-color: $body-color;
@@ -20,28 +29,23 @@ body {
   position          : absolute;
   bottom            : 0;
   left              : 20px;
-  @include show-logo('dark-logo.png');
+  @include show-logo($compass-logo);
 }
 
 .sass {
   position          : absolute;
   bottom            : 10px;
   right             : 20px;
-  @include show-logo('sass.gif');
+  @include show-logo($sass-logo);
 }
 
-.style-big-list {
-  li {
-    font-size : 60px;
-  }
+//extendables
+
+.rounded {
+  @include border-radius(10px);
 }
 
-.style-variable-why {
-  ul {
-    width  : 450px !important;
-    margin : 0 auto;
-  }
-}
+// syntax overrides
 
 .na {
   color : #19177C;
@@ -50,10 +54,6 @@ body {
 .err {
   color : #008000;
   border : none;
-}
-
-.rounded {
-  @include border-radius(10px);
 }
 
 h1, h2, h3, li, p {
@@ -79,6 +79,18 @@ h1, h2, h3, li, p {
     &.active { opacity : 1.0 }
   }
 
+  .style-big-list li {
+    font-size : 60px;
+  }
+
+  .style-sprite-layout ul {
+    width : 500px !important;
+  }
+
+  .style-variable-why ul {
+    width  : 450px !important;
+    margin : 0 auto;
+  }
 
   .style-better .highlight {
     width : 800px;
@@ -124,11 +136,19 @@ h1, h2, h3, li, p {
 
   .style-important {
     h1 { 
-      color : rgb(255, 0, 0); 
+      color : $important-color; 
       font-weight : normal;
 
     }
   }
 
+}
+
+.grid {
+  background-color : $code-background;
+  margin           : 0 auto;
+  height           : 500px;
+  width            : 700px;
+  @include grid-background(16, 20px, 10px, 20px, 5px, $force-fluid: true);
 }
 

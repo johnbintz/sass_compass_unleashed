@@ -1,2 +1,32 @@
 !SLIDE
 # Inheritance
+
+!SLIDE
+# Inception rule!
+<img src="/assets/InceptionArch_Slusher.jpg" width='800px'>
+
+!SLIDE
+<img src='/assets/36kou7.jpg' height='700px'>
+
+!SLIDE
+# Well you can but it gets messy
+``` scss
+.foo {
+  width: 5px;
+  .bar {
+    height: 20px;
+    .baz {
+      color : red;
+      .what-comes-after-baz {
+        border : green solid 1px;
+        &.something {
+          @extend .float-left;
+        }
+      }    
+    }
+  }
+}
+```
+
+!SLIDE
+# And slow

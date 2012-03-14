@@ -1,3 +1,3 @@
 #= require attentive
 
-Attentive.setup('#slides')
+Attentive.Presentation.setup('#slides')

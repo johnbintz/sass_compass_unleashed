@@ -1,0 +1,145 @@
+!SLIDE
+# Compass
+
+!SLIDE
+
+* Stylesheet framework
+* Considered sass standard library
+* Standalone application
+* Has the ability to have application integrations (rails, django, etc.)
+
+!SLIDE
+
+## Currently the only application integration supported by the core team is rails
+
+!SLIDE big-list
+
+## Features
+
+* Sprites
+* CSS3
+* Layout tools
+* And much more
+
+!SLIDE
+
+# Sprites!
+
+!SLIDE big-list
+
+* Fewer http requests.
+* You don't have a bunch of individual images to manage.
+* Customizable
+* ITS EASY!
+
+!SLIDE
+
+# This EASY!
+
+``` scss
+
+@import "my-icons/*.png";
+@include all-my-icons-sprites;
+
+```
+
+!SLIDE
+## BAM!
+``` scss
+.my-icons-sprite,
+.my-icons-delete,
+.my-icons-edit,
+.my-icons-new,
+.my-icons-save   { background: url('/images/my-icons-s34fe0604ab.png') no-repeat; }
+
+.my-icons-delete { background-position: 0 0; }
+.my-icons-edit   { background-position: 0 -32px; }
+.my-icons-new    { background-position: 0 -64px; }
+.my-icons-save   { background-position: 0 -96px; }
+```
+
+!SLIDE big-list sprite-layout
+
+# Layouts
+
+* Vertical (default)
+* Horizontal
+* Diagonal
+* Smart
+
+
+!SLIDE
+
+# Magic Selectors
+
+* my-buttons/glossy.png
+* my-buttons/glossy_hover.png
+* my-buttons/glossy_active.png
+* my-buttons/glossy_target.png
+
+!SLIDE
+
+# Example
+
+``` scss
+@import "my-buttons/*.png";
+
+a {
+  @include my-buttons-sprite(glossy)
+}
+```
+
+!SLIDE
+
+# BAM!
+
+``` scss
+.my-buttons-sprite, a {
+  background: url('/my-buttons-sedfef809e2.png') no-repeat;
+}
+
+a {
+  background-position: 0 0;
+}
+a:hover, a.glossy_hover, a.glossy-hover {
+  background-position: 0 -40px;
+}
+a:target, a.glossy_target, a.glossy-target {
+  background-position: 0 -60px;
+}
+a:active, a.glossy_active, a.glossy-active {
+  background-position: 0 -20;
+}
+```
+
+!SLIDE important
+
+# Beware of your file size!
+
+!SLIDE
+
+# We support all CSS3 properties with vendor prefix's and new ones are being added all the time.
+
+!SLIDE big-list
+
+# Layout tools
+
+* Vertical rhythm
+* Grids
+* And more!
+
+!SLIDE
+
+# Vertical rhythm
+
+## The spacing and arrangement of text as the reader descends the page.
+
+!SLIDE
+
+## "Just as regular use of time provides rhythm in music, so regular use of space provides rhythm in typography, and without rhythm the listener, or the reader, becomes disorientated and lost." - 24ways.org
+
+!SLIDE
+
+<div class='grid' ></div>
+
+
