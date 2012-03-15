@@ -1,5 +1,6 @@
 !SLIDE
 # Compass
+## http://compass-style.org
 
 !SLIDE
 
@@ -141,5 +142,33 @@ a:active, a.glossy_active, a.glossy-active {
 !SLIDE
 
 <div class='grid' ></div>
+
+!SLIDE
+
+## We need help!
+https://github.com/chriseppstein/compass
+
+* Documentation
+* Stylesheet cleanup
+* Code Refactoring
+
+!SLIDE
+## Core Team
+
+* Chris Eppstein
+* Scott Davis (me)
+* Brandon Mathis
+* Eirc Myer (The other one)
+* Anthony Short (newest member)
+
+!SLIDE
+
+# Charity
+### United Mitochondrial Disease Foundation
+### Please donate - http://umdf.org/compass
+
+
+
+
 
 

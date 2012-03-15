@@ -30,3 +30,22 @@
 
 !SLIDE
 # And slow
+
+!SLIDE
+
+## Selector layout
+
+``` scss
+.release_title a{
+  @extend h3;
+  @include adjust-font-size-to(20px, 1);
+  @include trailer;
+  
+  text-decoration : none;
+  display         : block;
+  
+  &:hover {
+   color:$hover-color; 
+  }
+}
+```
