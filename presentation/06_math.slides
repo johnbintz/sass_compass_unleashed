@@ -6,6 +6,10 @@
 # *Almost* every thing a designer does can be converted into some sort of mathmatical layout... *ALMOST*
 
 !SLIDE
+
+<img src='/assets/The_Parthenon_in_Athens.jpg' >
+
+!SLIDE
 # Layout
 ``` scss
 $wrapper-width      : 960px;
@@ -43,3 +47,4 @@ $main-content-width : $wrapper - $sidebar;
   top: ($height / 2) - (global-sprite-height(play_movie) / 2);
 }
 ```
+<img src='/assets/play_button.png' >

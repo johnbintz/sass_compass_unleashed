@@ -6,10 +6,10 @@
 <img src="/assets/InceptionArch_Slusher.jpg" width='800px'>
 
 !SLIDE
-<img src='/assets/36kou7.jpg' height='700px'>
+<img src='/assets/36kou7.jpg' height='600px'>
 
 !SLIDE
-# Well you can but it gets messy
+## Well you can but it gets messy
 ``` scss
 .foo {
   width: 5px;

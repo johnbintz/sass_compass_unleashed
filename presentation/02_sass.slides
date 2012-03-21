@@ -51,17 +51,17 @@
 !SLIDE inheritance
 # Inheritance
 ``` scss
-
 a {
-
   color : $link-color;
 
   &:hover {
     color : $link-hover-color;
   }
-
 }
-
+```
+``` css
+a { color : blue; }
+a:hover { color : red; }
 ```
 
 !SLIDE extend

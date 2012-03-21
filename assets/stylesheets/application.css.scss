@@ -84,6 +84,14 @@ h1, h2, h3, li, p {
     font-size : 60px;
   }
 
+  .style-medium-list li {
+    font-size : 40px;
+  }
+
+  .style-small-list li {
+    font-size : 20px;
+  }
+
   .style-sprite-layout ul {
     width : 500px !important;
   }
@@ -120,6 +128,12 @@ h1, h2, h3, li, p {
     }
   }
 
+  .style-grid-slide-scss {
+    .highlight {
+      font-size: 16px !important;
+    }
+  }
+
   code {
     @extend .rounded;
     
@@ -145,9 +159,11 @@ h1, h2, h3, li, p {
   }
 
 }
-
-.grid {
+@mixin my-grid {
   @include grid-background(16, 20px, 10px, 20px, 5px, $force-fluid: true);
+}
+.grid {
+  @include my-grid;
 
   background-color : $code-background;
   margin           : 0 auto;
@@ -155,3 +171,13 @@ h1, h2, h3, li, p {
   width            : 700px;
 }
 
+
+.standard-grid {
+  $show-baseline-grid-backgrounds: false;
+  @include my-grid;
+
+  background-color : $code-background;
+  margin           : 0 auto;
+  height           : 500px;
+  width            : 700px;
+}

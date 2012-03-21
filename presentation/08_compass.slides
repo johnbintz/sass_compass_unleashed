@@ -26,7 +26,7 @@
 
 # Sprites!
 
-!SLIDE big-list
+!SLIDE medium-list
 
 * Fewer http requests.
 * You don't have a bunch of individual images to manage.
@@ -51,7 +51,9 @@
 .my-icons-delete,
 .my-icons-edit,
 .my-icons-new,
-.my-icons-save   { background: url('/images/my-icons-s34fe0604ab.png') no-repeat; }
+.my-icons-save   { 
+  background: url('/images/my-icons-s34fe0604ab.png') no-repeat; 
+}
 
 .my-icons-delete { background-position: 0 0; }
 .my-icons-edit   { background-position: 0 -32px; }
@@ -59,15 +61,26 @@
 .my-icons-save   { background-position: 0 -96px; }
 ```
 
-!SLIDE big-list sprite-layout
+!SLIDE
 
-# Layouts
+# Sprite Layouts
 
-* Vertical (default)
-* Horizontal
-* Diagonal
-* Smart
+!SLIDE
+## Vertical (default)
+<img src='/assets/vert.png' >
 
+!SLIDE
+## Horizontal
+<img src='/assets/horizontal.png' >
+
+!SLIDE
+## Diagonal
+<img src='/assets/diagonal.png' >
+
+!SLIDE
+
+## Smart
+<img src='/assets/smart.png' >
 
 !SLIDE
 
@@ -102,13 +115,13 @@ a {
 a {
   background-position: 0 0;
 }
-a:hover, a.glossy_hover, a.glossy-hover {
+a:hover, a.glossy-hover {
   background-position: 0 -40px;
 }
-a:target, a.glossy_target, a.glossy-target {
+a:target, a.glossy-target {
   background-position: 0 -60px;
 }
-a:active, a.glossy_active, a.glossy-active {
+a:active, a.glossy-active {
   background-position: 0 -20;
 }
 ```
@@ -119,15 +132,37 @@ a:active, a.glossy_active, a.glossy-active {
 
 !SLIDE
 
-# We support all CSS3 properties with vendor prefix's and new ones are being added all the time.
+# We support most CSS3 properties with vendor prefix's.
+
+!SLIDE big-list
+
+* Gradients
+* Shadows
+* Box model
+* Transitions
+* Much more
 
 !SLIDE big-list
 
 # Layout tools
 
+* Grid
 * Vertical rhythm
-* Grids
 * And more!
+
+!SLIDE
+<div class='standard-grid' ></div>
+
+!SLIDE grid-slide-scss
+
+``` scss
+.grid {
+  @include grid-background($total, $column, $gutter, $baseline, 
+                           $offset, $column-color, $gutter-color, 
+                           $baseline-color, $force-fluid)
+}
+```
+
 
 !SLIDE
 
@@ -145,27 +180,54 @@ a:active, a.glossy_active, a.glossy-active {
 
 !SLIDE
 
-## We need help!
-https://github.com/chriseppstein/compass
+<img src='/assets/rhythm_layout.png' width="700px">
 
-* Documentation
-* Stylesheet cleanup
-* Code Refactoring
+!SLIDE medium-list
 
-!SLIDE
-## Core Team
-
-* Chris Eppstein
-* Scott Davis (me)
-* Brandon Mathis
-* Eirc Myer (The other one)
-* Anthony Short (newest member)
+* Height : rhythms
+* Width  : columns
 
 !SLIDE
 
-# Charity
-### United Mitochondrial Disease Foundation
-### Please donate - http://umdf.org/compass
+``` scss
+$release-content-height            : rhythm(2);
+
+$section-side-width                : column-width(4);
+
+$primary-image-caption-line-height : floor($base-line-height / 2); 
+
+$group-image-height                : rhythm(6);
+
+.contents .show {
+  h1 {
+    @include header(3);
+    @include padding-leader;
+    @include trailer;
+    color  : $primary-accent-color;
+  }
+// etc ...
+```
+
+!SLIDE
+<img src='/assets/vert_rhythm_bad.jpg' >
+
+http://coding.smashingmagazine.com/2009/04/03/8-simple-ways-to-improve-typography-in-your-designs/
+
+!SLIDES
+
+# Extensions
+
+* fancy-buttons
+* sassy-buttons
+* susy
+* blueprint
+* twitter-bootstrap
+* etc...
+
+!SLIDE 
+
+<img src='/assets/fancy-buttons.png' >
+
 
 
 

@@ -3,12 +3,12 @@
 
 !SLIDE bad-variables
 ``` scss
+$height : 2px;
 // There are 100 lines before this
 .content_head {
   @include clearfix;
   
   .hr { 
-    $height       : 2px;
     padding-top   : (rhythm(1) / 2) - $height;
     width         : 100%;
     border-bottom : $height solid $secondary-accent-color;
@@ -33,28 +33,17 @@
 
 * Easy to find
 * Easy to update
-* No suprises
+* No surprises
 
 !SLIDE
 
 ``` scss
-/* Local Variaibles */
-$release-content-width       : 760px;
-$release-content-border-size : 6px;
-$release-content-top-margin  : 9px;
+/* Local Variables */
 $release-content-height      : rhythm(2);
-
-$section-side-width          : column-width(4);
-$section-side-height         : 24;
-$section-side-li-padding     : 10px; 
-
-$control-border-height       : 1px;
-$control-box-height          : 2;
-$control-top-box-leader      : 1;
-
+$section-side-width          : column-width(4) + $sidebar-width;
 $group-image-height          : rhythm(6);
 
-.contents .show {
+.show {
   h1 {
     @include header(3);
     @include trailer;
