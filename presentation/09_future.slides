@@ -1,0 +1,39 @@
+!SLIDE
+
+# The future!
+
+!SLIDE medium-list
+# Sass
+* Associative array data type (Hash)
+* Better list functions
+* `@content`
+
+!SLIDE
+## @content
+``` scss
+ @mixin do-something {
+  font-size : 12px;
+  color     : red;
+  @content;
+ }
+
+p {
+  @include do-something {
+    color : blue;
+  }
+}
+```
+
+``` css
+p {
+  font-size : 12px;
+  color : red;
+  color : blue;
+}
+```
+
+!SLIDE medium-list
+# Compass
+* Media query framework
+* A css hacks library 
+* Extract blueprint from compass to a stand alone framework
