@@ -132,14 +132,18 @@
 <h1>Inheritance</h1>
 
 <div class="highlight"><pre><span class="nt">a</span> <span class="p">{</span>
-
   <span class="na">color</span><span class="o"> :</span> <span class="nv">$link-color</span><span class="p">;</span>
 
   <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
     <span class="na">color</span><span class="o"> :</span> <span class="nv">$link-hover-color</span><span class="p">;</span>
   <span class="p">}</span>
-
 <span class="p">}</span>
+</pre>
+</div>
+
+
+<div class="highlight"><pre><span class="nt">a</span> <span class="p">{</span> <span class="k">color</span> <span class="o">:</span> <span class="nb">blue</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span> <span class="k">color</span> <span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
 </pre>
 </div>
 
@@ -256,12 +260,12 @@
 <h1>Variables Definitions</h1>
 
 </div></div><div class="slide style-bad-variables"><div class="content">
-<div class="highlight"><pre><span class="c1">// There are 100 lines before this</span>
+<div class="highlight"><pre><span class="nv">$height</span><span class="o"> :</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+<span class="c1">// There are 100 lines before this</span>
 <span class="nc">.content_head</span> <span class="p">{</span>
   <span class="k">@include</span><span class="nd"> clearfix</span><span class="p">;</span>
   
   <span class="nc">.hr</span> <span class="p">{</span> 
-    <span class="nv">$height</span><span class="o">       :</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
     <span class="na">padding-top</span><span class="o">   :</span> <span class="p">(</span><span class="nf">rhythm</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="nv">$height</span><span class="p">;</span>
     <span class="na">width</span><span class="o">         :</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
     <span class="na">border-bottom</span><span class="o"> :</span> <span class="nv">$height</span> <span class="no">solid</span> <span class="nv">$secondary-accent-color</span><span class="p">;</span>
@@ -289,30 +293,19 @@
 <ul>
 <li>Easy to find</li>
 <li>Easy to update</li>
-<li>No suprises</li>
+<li>No surprises</li>
 </ul>
 
 
 </div></div><div class="slide"><div class="content">
 
 
-<div class="highlight"><pre><span class="cm">/* Local Variaibles */</span>
-<span class="na">$release-content-width</span><span class="o">       :</span> <span class="mi">760</span><span class="kt">px</span><span class="p">;</span>
-<span class="na">$release-content-border-size</span><span class="o"> :</span> <span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
-<span class="na">$release-content-top-margin</span><span class="o">  :</span> <span class="mi">9</span><span class="kt">px</span><span class="p">;</span>
+<div class="highlight"><pre><span class="cm">/* Local Variables */</span>
 <span class="na">$release-content-height</span><span class="o">      :</span> <span class="nf">rhythm</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-
-<span class="na">$section-side-width</span><span class="o">          :</span> <span class="nf">column-width</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-<span class="na">$section-side-height</span><span class="o">         :</span> <span class="mi">24</span><span class="p">;</span>
-<span class="na">$section-side-li-padding</span><span class="o">     :</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span> 
-
-<span class="na">$control-border-height</span><span class="o">       :</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
-<span class="na">$control-box-height</span><span class="o">          :</span> <span class="mi">2</span><span class="p">;</span>
-<span class="na">$control-top-box-leader</span><span class="o">      :</span> <span class="mi">1</span><span class="p">;</span>
-
+<span class="na">$section-side-width</span><span class="o">          :</span> <span class="nf">column-width</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="nv">$sidebar-width</span><span class="p">;</span>
 <span class="na">$group-image-height</span><span class="o">          :</span> <span class="nf">rhythm</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
 
-<span class="nc">.contents</span> <span class="nc">.show</span> <span class="p">{</span>
+<span class="nc">.show</span> <span class="p">{</span>
   <span class="nt">h1</span> <span class="p">{</span>
     <span class="k">@include</span><span class="nd"> header</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
     <span class="k">@include</span><span class="nd"> trailer</span><span class="p">;</span>
@@ -330,6 +323,9 @@
 
 </div></div><div class="slide style-long"><div class="content">
 <h1><em>Almost</em> every thing a designer does can be converted into some sort of mathmatical layout... <em>ALMOST</em></h1>
+
+</div></div><div class="slide"><div class="content">
+<p><img src='/assets/The_Parthenon_in_Athens.jpg' ></p>
 
 </div></div><div class="slide"><div class="content">
 <h1>Layout</h1>
@@ -378,6 +374,8 @@
 </div>
 
 
+<p><img src='/assets/play_button.png' ></p>
+
 </div></div><div class="slide"><div class="content">
 <h1>Inheritance</h1>
 
@@ -387,10 +385,10 @@
 <p><img src="/assets/InceptionArch_Slusher.jpg" width='800px'></p>
 
 </div></div><div class="slide"><div class="content">
-<p><img src='/assets/36kou7.jpg' height='700px'></p>
+<p><img src='/assets/36kou7.jpg' height='600px'></p>
 
 </div></div><div class="slide"><div class="content">
-<h1>Well you can but it gets messy</h1>
+<h2>Well you can but it gets messy</h2>
 
 <div class="highlight"><pre><span class="nc">.foo</span> <span class="p">{</span>
   <span class="na">width</span><span class="o">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
@@ -466,7 +464,7 @@
 </div></div><div class="slide"><div class="content">
 <h1>Sprites!</h1>
 
-</div></div><div class="slide style-big-list"><div class="content">
+</div></div><div class="slide style-medium-list"><div class="content">
 <ul>
 <li>Fewer http requests.</li>
 <li>You don't have a bunch of individual images to manage.</li>
@@ -493,7 +491,9 @@
 <span class="nc">.my-icons-delete</span><span class="o">,</span>
 <span class="nc">.my-icons-edit</span><span class="o">,</span>
 <span class="nc">.my-icons-new</span><span class="o">,</span>
-<span class="nc">.my-icons-save</span>   <span class="p">{</span> <span class="na">background</span><span class="o">:</span> <span class="sx">url(&#39;/images/my-icons-s34fe0604ab.png&#39;)</span> <span class="no">no-repeat</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.my-icons-save</span>   <span class="p">{</span> 
+  <span class="na">background</span><span class="o">:</span> <span class="sx">url(&#39;/images/my-icons-s34fe0604ab.png&#39;)</span> <span class="no">no-repeat</span><span class="p">;</span> 
+<span class="p">}</span>
 
 <span class="nc">.my-icons-delete</span> <span class="p">{</span> <span class="na">background-position</span><span class="o">:</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
 <span class="nc">.my-icons-edit</span>   <span class="p">{</span> <span class="na">background-position</span><span class="o">:</span> <span class="mi">0</span> <span class="mi">-32</span><span class="kt">px</span><span class="p">;</span> <span class="p">}</span>
@@ -505,16 +505,28 @@
 
 
 
-</div></div><div class="slide style-big-list style-sprite-layout"><div class="content">
-<h1>Layouts</h1>
+</div></div><div class="slide"><div class="content">
+<h1>Sprite Layouts</h1>
 
-<ul>
-<li>Vertical (default)</li>
-<li>Horizontal</li>
-<li>Diagonal</li>
-<li>Smart</li>
-</ul>
+</div></div><div class="slide"><div class="content">
+<h2>Vertical (default)</h2>
 
+<p><img src='/assets/vert.png' ></p>
+
+</div></div><div class="slide"><div class="content">
+<h2>Horizontal</h2>
+
+<p><img src='/assets/horizontal.png' ></p>
+
+</div></div><div class="slide"><div class="content">
+<h2>Diagonal</h2>
+
+<p><img src='/assets/diagonal.png' ></p>
+
+</div></div><div class="slide"><div class="content">
+<h2>Smart</h2>
+
+<p><img src='/assets/smart.png' ></p>
 
 </div></div><div class="slide"><div class="content">
 <h1>Magic Selectors</h1>
@@ -551,13 +563,13 @@
 <span class="nt">a</span> <span class="p">{</span>
   <span class="na">background-position</span><span class="o">:</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nt">a</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.glossy_hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.glossy-hover</span> <span class="p">{</span>
+<span class="nt">a</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.glossy-hover</span> <span class="p">{</span>
   <span class="na">background-position</span><span class="o">:</span> <span class="mi">0</span> <span class="mi">-40</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nt">a</span><span class="nd">:target</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.glossy_target</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.glossy-target</span> <span class="p">{</span>
+<span class="nt">a</span><span class="nd">:target</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.glossy-target</span> <span class="p">{</span>
   <span class="na">background-position</span><span class="o">:</span> <span class="mi">0</span> <span class="mi">-60</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nt">a</span><span class="nd">:active</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.glossy_active</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.glossy-active</span> <span class="p">{</span>
+<span class="nt">a</span><span class="nd">:active</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.glossy-active</span> <span class="p">{</span>
   <span class="na">background-position</span><span class="o">:</span> <span class="mi">0</span> <span class="mi">-20</span><span class="p">;</span>
 <span class="p">}</span>
 </pre>
@@ -570,16 +582,46 @@
 <h1>Beware of your file size!</h1>
 
 </div></div><div class="slide"><div class="content">
-<h1>We support all CSS3 properties with vendor prefix's and new ones are being added all the time.</h1>
+<h1>We support most CSS3 properties with vendor prefix's.</h1>
+
+</div></div><div class="slide style-big-list"><div class="content">
+<ul>
+<li>Gradients</li>
+<li>Shadows</li>
+<li>Box model</li>
+<li>Transitions</li>
+<li>Much more</li>
+</ul>
+
 
 </div></div><div class="slide style-big-list"><div class="content">
 <h1>Layout tools</h1>
 
 <ul>
+<li>Grid</li>
 <li>Vertical rhythm</li>
-<li>Grids</li>
 <li>And more!</li>
 </ul>
+
+
+</div></div><div class="slide"><div class="content">
+<div class='standard-grid' ></div>
+
+
+
+
+</div></div><div class="slide style-grid-slide-scss"><div class="content">
+
+
+<div class="highlight"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> grid-background</span><span class="p">(</span><span class="nv">$total</span><span class="o">,</span> <span class="nv">$column</span><span class="o">,</span> <span class="nv">$gutter</span><span class="o">,</span> <span class="nv">$baseline</span><span class="o">,</span> 
+                           <span class="nv">$offset</span><span class="o">,</span> <span class="nv">$column-color</span><span class="o">,</span> <span class="nv">$gutter-color</span><span class="o">,</span> 
+                           <span class="nv">$baseline-color</span><span class="o">,</span> <span class="nv">$force-fluid</span><span class="p">)</span>
+<span class="p">}</span>
+</pre>
+</div>
+
+
 
 
 </div></div><div class="slide"><div class="content">
@@ -599,6 +641,116 @@
 
 
 </div></div><div class="slide"><div class="content">
+<p><img src='/assets/rhythm_layout.png' width="700px"></p>
+
+</div></div><div class="slide style-medium-list"><div class="content">
+<ul>
+<li>Height : rhythms</li>
+<li>Width  : columns</li>
+</ul>
+
+
+</div></div><div class="slide"><div class="content">
+
+
+<div class="highlight"><pre><span class="na">$release-content-height</span><span class="o">            :</span> <span class="nf">rhythm</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="na">$section-side-width</span><span class="o">                :</span> <span class="nf">column-width</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="na">$primary-image-caption-line-height</span><span class="o"> :</span> <span class="nf">floor</span><span class="p">(</span><span class="nv">$base-line-height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span> 
+
+<span class="na">$group-image-height</span><span class="o">                :</span> <span class="nf">rhythm</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+
+<span class="nc">.contents</span> <span class="nc">.show</span> <span class="p">{</span>
+  <span class="nt">h1</span> <span class="p">{</span>
+    <span class="k">@include</span><span class="nd"> header</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="k">@include</span><span class="nd"> padding-leader</span><span class="p">;</span>
+    <span class="k">@include</span><span class="nd"> trailer</span><span class="p">;</span>
+    <span class="na">color</span><span class="o">  :</span> <span class="nv">$primary-accent-color</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="c1">// etc ...</span>
+</pre>
+</div>
+
+
+
+
+</div></div><div class="slide"><div class="content">
+<p><img src='/assets/vert_rhythm_bad.jpg' ></p>
+
+<p>http://coding.smashingmagazine.com/2009/04/03/8-simple-ways-to-improve-typography-in-your-designs/</p>
+
+</div></div><div class="slide"><div class="content">
+<h1>Extensions</h1>
+
+<ul>
+<li>fancy-buttons</li>
+<li>sassy-buttons</li>
+<li>susy</li>
+<li>blueprint</li>
+<li>twitter-bootstrap</li>
+<li>etc...</li>
+</ul>
+
+
+</div></div><div class="slide"><div class="content">
+<p><img src='/assets/fancy-buttons.png' ></p>
+
+</div></div><div class="slide"><div class="content">
+<h1>The future!</h1>
+
+</div></div><div class="slide style-medium-list"><div class="content">
+<h1>Sass</h1>
+
+<ul>
+<li>Associative array data type (Hash)</li>
+<li>Better list functions</li>
+<li><code>@content</code></li>
+</ul>
+
+
+</div></div><div class="slide"><div class="content">
+<h2>@content</h2>
+
+<div class="highlight"><pre> <span class="k">@mixin</span><span class="nf"> do-something</span> <span class="p">{</span>
+  <span class="na">font-size</span><span class="o"> :</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+  <span class="na">color</span><span class="o">     :</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">@content</span><span class="o">;</span>
+ <span class="p">}</span>
+
+<span class="nt">p</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> do-something</span> <span class="p">{</span>
+    <span class="na">color</span><span class="o"> :</span> <span class="nb">blue</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+</div>
+
+
+
+
+<div class="highlight"><pre><span class="nt">p</span> <span class="p">{</span>
+  <span class="k">font-size</span> <span class="o">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="k">color</span> <span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">color</span> <span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+</div>
+
+
+
+
+</div></div><div class="slide style-medium-list"><div class="content">
+<h1>Compass</h1>
+
+<ul>
+<li>Media query framework</li>
+<li>A css hacks library</li>
+<li>Extract blueprint from compass to a stand alone framework</li>
+</ul>
+
+
+</div></div><div class="slide"><div class="content">
 <h2>We need help!</h2>
 
 <p>https://github.com/chriseppstein/compass</p>
@@ -610,15 +762,15 @@
 </ul>
 
 
-</div></div><div class="slide"><div class="content">
+</div></div><div class="slide style-small-list"><div class="content">
 <h2>Core Team</h2>
 
 <ul>
-<li>Chris Eppstein</li>
-<li>Scott Davis (me)</li>
-<li>Brandon Mathis</li>
-<li>Eirc Myer (The other one)</li>
-<li>Anthony Short (newest member)</li>
+<li>Chris Eppstein - chriseppstein.github.com</li>
+<li>Scott Davis (me) - scottdavis.github.com</li>
+<li>Brandon Mathis - brandonmathis.com</li>
+<li>Eric Meyer (The other one) - eric.oddbird.net</li>
+<li>Anthony Short - anthonyshort.me</li>
 </ul>
 
 
@@ -628,6 +780,9 @@
 <h3>United Mitochondrial Disease Foundation</h3>
 
 <h3>Please donate - http://umdf.org/compass</h3>
+
+</div></div><div class="slide"><div class="content">
+<h1>Questions!</h1>
 
 </div></div></div>
 <div class='compass'></div>
