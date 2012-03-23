@@ -105,6 +105,51 @@
 
 
 
+</div></div><div class="slide"><div class="content">
+<h1>Lists</h1>
+
+<div class="highlight"><pre>  <span class="nt">border</span> <span class="o">:</span> <span class="nt">1px</span> <span class="nt">solid</span> <span class="nt">black</span><span class="o">;</span>
+</pre>
+</div>
+
+
+
+
+</div></div><div class="slide"><div class="content">
+
+
+<div class="highlight"><pre>  <span class="na">$my-list</span><span class="o"> :</span> <span class="mi">1</span><span class="kt">px</span> <span class="no">solid</span> <span class="nb">black</span><span class="p">;</span>
+  <span class="na">$my-list2</span><span class="o"> :</span> <span class="mi">1</span><span class="kt">px</span><span class="o">,</span> <span class="no">solid</span><span class="o">,</span> <span class="nb">black</span><span class="p">;</span>
+  <span class="na">$my-list3</span><span class="o"> :</span> <span class="p">(</span><span class="mi">1</span><span class="kt">px</span> <span class="no">solid</span> <span class="nb">black</span><span class="p">);</span>
+
+  <span class="na">border</span><span class="o"> :</span> <span class="nv">$my-list</span><span class="p">;</span>
+</pre>
+</div>
+
+
+
+
+</div></div><div class="slide"><div class="content">
+<h1>In ruby</h1>
+
+<div class="highlight"><pre>  <span class="no">Sass</span><span class="o">::</span><span class="no">Script</span><span class="o">::</span><span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">[</span><span class="s1">&#39;1px&#39;</span><span class="p">,</span> <span class="s1">&#39;solid&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="o">]</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre>
+</div>
+
+
+
+
+</div></div><div class="slide"><div class="content">
+<h2>List Functions</h2>
+
+<ul>
+<li><code>length($list)</code></li>
+<li><code>nth($list, $n)</code></li>
+<li><code>join($list1, $list2, [$separator])</code></li>
+<li>More coming soon!</li>
+</ul>
+
+
 </div></div><div class="slide style-mixins"><div class="content">
 <h1>Functions and Mixins</h1>
 
@@ -169,6 +214,42 @@
 <span class="p">}</span>
 </pre>
 </div>
+
+
+
+
+</div></div><div class="slide"><div class="content">
+<h2>Extending with ruby</h2>
+
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">sprite</span><span class="p">(</span><span class="n">map</span><span class="p">,</span> <span class="n">sprite</span><span class="p">,</span> <span class="n">offset_x</span> <span class="o">=</span> <span class="no">ZERO</span><span class="p">,</span> <span class="n">offset_y</span> <span class="o">=</span> <span class="no">ZERO</span><span class="p">)</span>
+  <span class="n">sprite</span> <span class="o">=</span> <span class="n">convert_sprite_name</span><span class="p">(</span><span class="n">sprite</span><span class="p">)</span>    
+  <span class="n">verify_map</span><span class="p">(</span><span class="n">map</span><span class="p">)</span>
+  <span class="k">unless</span> <span class="n">sprite</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="no">Sass</span><span class="o">::</span><span class="no">Script</span><span class="o">::</span><span class="nb">String</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="no">Sass</span><span class="o">::</span><span class="no">SyntaxError</span>
+  <span class="k">end</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="n">sprite_url</span><span class="p">(</span><span class="n">map</span><span class="p">)</span>
+  <span class="n">position</span> <span class="o">=</span> <span class="n">sprite_position</span><span class="p">(</span><span class="n">map</span><span class="p">,</span> <span class="n">sprite</span><span class="p">,</span> <span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">)</span>
+  <span class="no">Sass</span><span class="o">::</span><span class="no">Script</span><span class="o">::</span><span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">[</span><span class="n">url</span><span class="o">]</span> <span class="o">+</span> <span class="n">position</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="ss">:space</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="no">Sass</span><span class="o">::</span><span class="no">Script</span><span class="o">::</span><span class="no">Functions</span><span class="o">.</span><span class="n">declare</span> <span class="ss">:sprite</span><span class="p">,</span> <span class="o">[</span><span class="ss">:map</span><span class="p">,</span> <span class="ss">:sprite</span><span class="o">]</span>
+<span class="no">Sass</span><span class="o">::</span><span class="no">Script</span><span class="o">::</span><span class="no">Functions</span><span class="o">.</span><span class="n">declare</span> <span class="ss">:sprite</span><span class="p">,</span> <span class="o">[</span><span class="ss">:map</span><span class="p">,</span> <span class="ss">:sprite</span><span class="p">,</span> <span class="ss">:offset_x</span><span class="o">]</span>
+<span class="no">Sass</span><span class="o">::</span><span class="no">Script</span><span class="o">::</span><span class="no">Functions</span><span class="o">.</span><span class="n">declare</span> <span class="ss">:sprite</span><span class="p">,</span> <span class="o">[</span><span class="ss">:map</span><span class="p">,</span> <span class="ss">:sprite</span><span class="p">,</span> <span class="ss">:offset_x</span><span class="p">,</span> <span class="ss">:offset_y</span><span class="o">]</span>
+</pre>
+</div>
+
+
+
+
+</div></div><div class="slide"><div class="content">
+<h2>Data types</h2>
+
+<ul>
+<li>Bool</li>
+<li>Color</li>
+<li>List</li>
+<li>Number</li>
+<li>String</li>
+</ul>
 
 
 </div></div><div class="slide"><div class="content">
