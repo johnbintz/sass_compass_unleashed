@@ -25,6 +25,43 @@
 
 ```
 
+!SLIDE 
+
+# Lists
+
+``` css
+  border : 1px solid black;
+```
+
+!SLIDE
+
+``` scss 
+  $my-list : 1px solid black;
+  $my-list2 : 1px, solid, black;
+  $my-list3 : (1px solid black);
+
+  border : $my-list;
+
+```
+
+!SLIDE
+
+# In ruby
+
+``` ruby 
+  Sass::Script::List.new(['1px', 'solid', 'black'], ',')
+```
+
+!SLIDE
+## List Functions
+
+* `length($list)`
+* `nth($list, $n)`
+* `join($list1, $list2, [$separator])`
+* More coming soon!
+
+
+
 !SLIDE mixins
 
 # Functions and Mixins
@@ -84,3 +121,31 @@ a:hover { color : red; }
 }
 
 ```
+
+!SLIDE
+## Extending with ruby
+
+``` ruby
+def sprite(map, sprite, offset_x = ZERO, offset_y = ZERO)
+  sprite = convert_sprite_name(sprite)    
+  verify_map(map)
+  unless sprite.is_a?(Sass::Script::String)
+    raise Sass::SyntaxError
+  end
+  url = sprite_url(map)
+  position = sprite_position(map, sprite, offset_x, offset_y)
+  Sass::Script::List.new([url] + position.value, :space)
+end
+Sass::Script::Functions.declare :sprite, [:map, :sprite]
+Sass::Script::Functions.declare :sprite, [:map, :sprite, :offset_x]
+Sass::Script::Functions.declare :sprite, [:map, :sprite, :offset_x, :offset_y]
+```
+
+!SLIDE
+## Data types
+
+ * Bool
+ * Color
+ * List
+ * Number
+ * String
