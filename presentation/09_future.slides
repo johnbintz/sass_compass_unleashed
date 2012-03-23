@@ -11,11 +11,11 @@
 !SLIDE
 ## @content
 ``` scss
- @mixin do-something {
+@mixin do-something {
   font-size : 12px;
   color     : red;
   @content;
- }
+}
 
 p {
   @include do-something {
@@ -35,5 +35,5 @@ p {
 !SLIDE medium-list
 # Compass
 * Media query framework
-* A css hacks library 
-* Extract blueprint from compass to a stand alone framework
+* A CSS hacks library 
+* Extract Blueprint from Compass to a stand alone framework

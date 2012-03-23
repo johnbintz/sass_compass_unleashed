@@ -1,9 +1,9 @@
 !SLIDE
 # Math
-## Is your best friend
+## is your best friend
 
 !SLIDE long
-# *Almost* every thing a designer does can be converted into some sort of mathmatical layout... *ALMOST*
+# *Almost* everything a designer does can be converted into some sort of mathmatical layout... *ALMOST*
 
 !SLIDE
 
@@ -40,7 +40,7 @@ $main-content-width : $wrapper - $sidebar;
 }
 ```
 !SLIDE
-# Image demensions
+# Image dimensions
 ``` scss
 .play {
   left: ($width / 2) - (global-sprite-width(play_movie) / 2);

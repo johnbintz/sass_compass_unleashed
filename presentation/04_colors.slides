@@ -43,10 +43,10 @@ $ancillary-compliment-color      : rgb(150,150,150) !default;
 ```
 
 !SLIDE pallet
-# Pallets
+# Palettes
 
 ``` scss
-// _pallet.scss
+// _palette.scss
 $orange        : rgb(138, 182, 225) !default;
 $blue          : rgb(33,89,167) !default;
 $lighter-blue  : rgb(138, 182, 225) !default;
@@ -69,6 +69,6 @@ $ancillary-compliment-color      : $lighter-gray;
 
 !SLIDE important long
 <img src="/assets/rage-face.png">
-# Only use your pallet colors to define your more descriptive color variables!
+# Only use your palette colors to define your more descriptive color variables!
 
 

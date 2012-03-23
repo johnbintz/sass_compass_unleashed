@@ -5,13 +5,13 @@
 !SLIDE
 
 * Stylesheet framework
-* Considered sass standard library
+* Considered Sass standard library
 * Standalone application
-* Has the ability to have application integrations (rails, django, etc.)
+* Has the ability to have application integrations (Rails, Django, etc.)
 
 !SLIDE
 
-## Currently the only application integration supported by the core team is rails
+## Currently the only application integration supported by the core team is Rails
 
 !SLIDE big-list
 
@@ -28,10 +28,10 @@
 
 !SLIDE medium-list
 
-* Fewer http requests.
+* Fewer HTTP requests.
 * You don't have a bunch of individual images to manage.
-* Customizable
-* ITS EASY!
+* Customizable.
+* IT'S EASY!
 
 !SLIDE
 
@@ -132,7 +132,7 @@ a:active, a.glossy-active {
 
 !SLIDE
 
-# We support most CSS3 properties with vendor prefix's.
+# We support most CSS3 properties with vendor prefixes.
 
 !SLIDE big-list
 
@@ -227,10 +227,4 @@ http://coding.smashingmagazine.com/2009/04/03/8-simple-ways-to-improve-typograph
 !SLIDE 
 
 <img src='/assets/fancy-buttons.png' >
-
-
-
-
-
-
 

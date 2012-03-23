@@ -3,7 +3,7 @@
 
 !SLIDE
 # What is Sass?
-## Its a preprocesor
+## It's a preprocesor
 
 !SLIDE
 # What does it do?
@@ -13,7 +13,7 @@
 * Functions
 * Selector Inheritance `@extend, &`
 * Control Directives `@if, @for, @each, @while`
-* Its a language!
+* It's a language!
 
 !SLIDE variables
 # Variables
@@ -46,7 +46,7 @@
 
 !SLIDE
 
-# In ruby
+# In Ruby
 
 ``` ruby 
   Sass::Script::List.new(['1px', 'solid', 'black'], ',')
@@ -123,7 +123,7 @@ a:hover { color : red; }
 ```
 
 !SLIDE
-## Extending with ruby
+## Extending with Ruby
 
 ``` ruby
 def sprite(map, sprite, offset_x = ZERO, offset_y = ZERO)
